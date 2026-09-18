@@ -8,12 +8,12 @@ on:
         required: true
         default: 'World'
         type: string
-  jobs:
-    greet:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Greet
-          run: |
-            echo "hello ${{ github.event.inputs.name }}"
-            echo "none"
-            
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet
+        run: |
+          echo "hello ${{ github.event.inputs.name }}"
+          echo "none"
