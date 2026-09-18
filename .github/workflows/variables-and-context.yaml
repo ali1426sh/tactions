@@ -1,0 +1,19 @@
+name: variable and context
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'presion to greet'
+        default: 'word'
+        required: true
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dumb context object
+        env:
+          GITHUB_CONTEXT_OBJECT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT_OBJECT"
+        
