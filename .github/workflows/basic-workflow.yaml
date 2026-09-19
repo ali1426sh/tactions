@@ -17,3 +17,5 @@ jobs:
         run: |
           echo "hello ${{ github.event.inputs.name }}"
           echo "none"
+      - name: Get runner IP
+        run: curl https://api.ipify.org
